@@ -1,0 +1,14 @@
+streamlit>=1.40
+pandas>=2.2
+numpy>=2.0
+matplotlib>=3.9
+scikit-learn>=1.5
+scipy>=1.13
+pypdf>=5.0
+python-docx>=1.1
+requests>=2.32
+Pillow>=11.0
+networkx>=3.3
+shap>=0.46
+diffprivlib>=0.6
+openai>=2.0
