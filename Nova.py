@@ -131,8 +131,116 @@ section[data-testid="stSidebar"] > div {background:linear-gradient(180deg,#fffff
 .stButton > button,.stDownloadButton > button {border-radius:12px;font-weight:700;}
 [data-testid="stMetric"] {background:rgba(255,255,255,.82);padding:1rem;border-radius:18px;border:1px solid var(--nova-border);}
 [data-testid="stDataFrame"] {border-radius:16px;overflow:hidden;}
+/* ================================
+   FORCE LIGHT / HIGH-CONTRAST UI
+   Keeps Streamlit Cloud readable even when the browser/account is in dark mode.
+   ================================ */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
+    color-scheme: light !important;
+}
+[data-testid="stAppViewContainer"] {
+    background:#ffffff !important;
+    color:#0f172a !important;
+}
+[data-testid="stMainBlockContainer"],
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stText"],
+[data-testid="stCaptionContainer"],
+h1,h2,h3,h4,h5,h6,p,li,label {
+    color:#0f172a !important;
+}
+[data-testid="stCaptionContainer"] p,
+small {
+    color:#64748b !important;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background:#ffffff !important;
+}
+section[data-testid="stSidebar"] > div {
+    background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%) !important;
+}
+section[data-testid="stSidebar"] * {
+    color:#0f172a !important;
+}
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p {
+    color:#64748b !important;
+}
+section[data-testid="stSidebar"] [role="radiogroup"] label {
+    color:#0f172a !important;
+}
+section[data-testid="stSidebar"] [role="radiogroup"] label:hover {
+    background:rgba(79,70,229,.06) !important;
+    border-radius:10px;
+}
+
+/* Inputs */
+[data-baseweb="input"] input,
+[data-baseweb="textarea"] textarea,
+[data-baseweb="select"] input {
+    color:#0f172a !important;
+    -webkit-text-fill-color:#0f172a !important;
+}
+[data-baseweb="input"],
+[data-baseweb="textarea"],
+[data-baseweb="select"] > div {
+    background:#ffffff !important;
+}
+
+/* Metrics */
+[data-testid="stMetric"] {
+    background:#ffffff !important;
+    box-shadow:0 8px 28px rgba(15,23,42,.06) !important;
+}
+[data-testid="stMetricLabel"] *,
+[data-testid="stMetricValue"] * {
+    color:#0f172a !important;
+}
+
+/* Alerts */
+[data-testid="stAlert"] {
+    border-radius:14px !important;
+}
+[data-testid="stAlert"] * {
+    color:#0f172a !important;
+}
+
+/* Buttons: keep primary buttons legible */
+.stButton > button, .stDownloadButton > button {
+    border-radius:12px !important;
+    font-weight:700 !important;
+}
+.stButton > button[kind="primary"],
+.stDownloadButton > button[kind="primary"] {
+    color:#ffffff !important;
+    background:#4f46e5 !important;
+    border-color:#4f46e5 !important;
+}
+.stButton > button[kind="secondary"],
+.stDownloadButton > button[kind="secondary"] {
+    color:#0f172a !important;
+    background:#ffffff !important;
+}
+
+/* Custom Nova components override the global text rule */
+.nova-hero, .nova-hero * {color:#ffffff !important;}
+.nova-hero-subtitle {color:rgba(255,255,255,.82) !important;}
+.nova-card-title,.nova-card-sub {color:#64748b !important;}
+.nova-card-value,.next-action-title {color:#0f172a !important;}
+.next-action-label {color:#4f46e5 !important;}
+.dna-pill {color:#3730a3 !important;}
+
 footer {visibility:hidden;}
-@media (max-width:900px) {.nova-hero-title{font-size:1.95rem}.block-container{padding-left:.85rem;padding-right:.85rem}.nova-card{min-height:auto}.nova-hero{padding:1.5rem 1.35rem}}
+@media (max-width:900px) {
+    .nova-hero-title{font-size:1.95rem}
+    .block-container{padding-left:.85rem;padding-right:.85rem}
+    .nova-card{min-height:auto}
+    .nova-hero{padding:1.5rem 1.35rem}
+}
 </style>
 """,
     unsafe_allow_html=True,
