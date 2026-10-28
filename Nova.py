@@ -209,22 +209,52 @@ section[data-testid="stSidebar"] [role="radiogroup"] label:hover {
     color:#0f172a !important;
 }
 
-/* Buttons: keep primary buttons legible */
-.stButton > button, .stDownloadButton > button {
-    border-radius:12px !important;
-    font-weight:700 !important;
-}
+/* ================================
+   PREMIUM PURPLE BUTTONS
+   ================================ */
+
+/* Primary buttons + all download buttons */
 .stButton > button[kind="primary"],
-.stDownloadButton > button[kind="primary"] {
-    color:#ffffff !important;
-    background:#4f46e5 !important;
-    border-color:#4f46e5 !important;
+[data-testid="stBaseButton-primary"],
+.stDownloadButton > button,
+[data-testid="stDownloadButton"] button {
+    background: linear-gradient(135deg, #4F46E5, #6D4AFF) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.22) !important;
 }
+
+/* Force ALL text inside purple buttons to white */
+.stButton > button[kind="primary"] *,
+[data-testid="stBaseButton-primary"] *,
+.stDownloadButton > button *,
+[data-testid="stDownloadButton"] button * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* Hover effect */
+.stButton > button[kind="primary"]:hover,
+[data-testid="stBaseButton-primary"]:hover,
+.stDownloadButton > button:hover,
+[data-testid="stDownloadButton"] button:hover {
+    background: linear-gradient(135deg, #4338CA, #5B3FEF) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(79, 70, 229, 0.30) !important;
+}
+
+/* Secondary buttons stay white */
 .stButton > button[kind="secondary"],
-.stDownloadButton > button[kind="secondary"] {
-    color:#0f172a !important;
-    background:#ffffff !important;
+[data-testid="stBaseButton-secondary"] {
+    color: #0F172A !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(148, 163, 184, 0.35) !important;
+    border-radius: 12px !important;
 }
+
 
 /* Custom Nova components override the global text rule */
 .nova-hero, .nova-hero * {color:#ffffff !important;}
